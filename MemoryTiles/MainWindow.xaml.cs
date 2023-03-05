@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MemoryTiles.CacheServices;
+using MemoryTiles.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,8 @@ namespace MemoryTiles
     {
         public MainWindow()
         {
+            Environment.SetEnvironmentVariable("cachePath", Environment.CurrentDirectory + @"\..\..\Cache");
+
             InitializeComponent();
         }
     }
