@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MemoryTiles.Views"
+        xmlns:local="clr-namespace:MemoryTiles.ViewModels"
         mc:Ignorable="d"
         Title="SignInView" Height="450" Width="800">
+        <Window.DataContext>
+            <local:SignInViewModel/>
+        </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -25,25 +28,15 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <ListView>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
-
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Username">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="Salut"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <ListBox Margin="20" ItemsSource="{Binding Usernames}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding }" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Grid>
             <Grid Grid.Column="1">
                 <TextBlock>Pe aici trebuie sa stea pozlele</TextBlock>

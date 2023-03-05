@@ -16,8 +16,13 @@ namespace MemoryTiles
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            SetEnvironmentVariables();
             SignInView signInView = new SignInView();
             signInView.Show();
+        }
+        public void SetEnvironmentVariables()
+        {
+            Environment.SetEnvironmentVariable("cachePath", Environment.CurrentDirectory + @"\..\..\Cache");
         }
     }
 }

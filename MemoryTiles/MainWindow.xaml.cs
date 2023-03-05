@@ -24,8 +24,6 @@ namespace MemoryTiles
     {
         public MainWindow()
         {
-            Environment.SetEnvironmentVariable("cachePath", Environment.CurrentDirectory + @"\..\..\Cache");
-
             InitializeComponent();
         }
     }

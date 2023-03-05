@@ -1,7 +1,9 @@
 ﻿using MemoryTiles.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace MemoryTiles.CacheServices
 {
@@ -24,6 +26,13 @@ namespace MemoryTiles.CacheServices
         {
             string pathToUserJson = Environment.GetEnvironmentVariable("cachePath") + @"\" + username + @"\Profile.json";
             return JsonConvert.DeserializeObject<User>(File.ReadAllText(pathToUserJson));
+        }
+        public static List<string> GetCachedUsernames()
+        {
+            List<string> pathsToUserProfiles
+                = new List<string>(Directory.GetDirectories(Environment.GetEnvironmentVariable("cachePath")));
+            // Selecting only the username
+            return pathsToUserProfiles.Select(x => x.Split('\\')[x.Split('\\').Length - 1]).ToList();
         }
     }
 }
