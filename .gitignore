@@ -1,3 +1,4 @@
 .vs
 /MemoryTiles/obj
 /MemoryTiles/bin
+/MemoryTiles/Cache/*
