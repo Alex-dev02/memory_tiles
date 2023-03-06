@@ -1,0 +1,52 @@
+﻿<Window x:Class="MemoryTiles.Views.CreateUserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryTiles.ViewModels"
+        mc:Ignorable="d"
+        Title="CreateUser" Height="450" Width="800">
+    <Window.DataContext>
+        <local:CreateUserViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition MaxHeight="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="50, 50, 0, 0" Grid.Row="0">
+            <TextBlock Margin="10, 10, 0, 5">
+                Username:
+            </TextBlock>
+            <TextBox Margin="10, 0, 0, 10" HorizontalAlignment="Left"
+                     MinWidth="150">
+            </TextBox>
+            <TextBlock Margin="10, 0, 0, 5">
+                Pick your avatar image:
+            </TextBlock>
+            <Image Source="{Binding ImageURI}"
+                   MaxWidth="300" MaxHeight="300"
+                   HorizontalAlignment="Left"
+                   Margin="10, 0, 0, 0"
+                   />
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="713*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1"
+                    Margin="50,10,0,10"
+                    MaxWidth="100"
+                    HorizontalAlignment="Left" Width="75"
+                    MaxHeight="50">Next</Button>
+            <Button Grid.Column="0"
+                    Margin="50,10,0,10"
+                    MaxWidth="100"
+                    HorizontalAlignment="Left" Grid.ColumnSpan="2" Width="75"
+                    MaxHeight="50">Previous</Button>
+        </Grid>
+    </Grid>
+</Window>
