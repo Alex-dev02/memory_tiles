@@ -34,5 +34,9 @@ namespace MemoryTiles.CacheServices
             // Selecting only the username
             return pathsToUserProfiles.Select(x => x.Split('\\')[x.Split('\\').Length - 1]).ToList();
         }
+        public static string GetAvatarImageURI(string username)
+        {
+            return LoadUser(username).PathToAvatar;
+        }
     }
 }

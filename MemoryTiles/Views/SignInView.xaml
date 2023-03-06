@@ -28,7 +28,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <ListBox Margin="50, 0, 50, 0" ItemsSource="{Binding Usernames}">
+                <ListBox Margin="50, 0, 50, 0" ItemsSource="{Binding Usernames}"
+                         SelectedItem="{Binding SelectedUsername}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -40,7 +41,7 @@
             </Grid>
             <Grid Grid.Column="1">
                 <Image Width="auto" Height="auto"
-                       Source="C:\Users\ionut\source\repos\MemoryTiles\MemoryTiles\Assets\om_zapada.jpg"/>
+                       Source="{Binding ImageURI}"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="2">
@@ -60,7 +61,8 @@
             </Grid>
             <Grid Grid.Column="2">
                 <Button Margin="40,0,40,0"
-                        VerticalAlignment="Center">Play</Button>
+                        VerticalAlignment="Center">
+                    Play</Button>
             </Grid>
             <Grid Grid.Column="3">
                 <Button Margin="40,0,40,0"
