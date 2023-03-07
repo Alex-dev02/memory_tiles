@@ -33,20 +33,25 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="87*"/>
-                <ColumnDefinition Width="713*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-
             <Button Grid.Column="1"
-                    Margin="50,10,0,10"
+                    Margin="62,10,0,10"
+                    MaxWidth="100"
+                    HorizontalAlignment="Left" Width="76"
+                    MaxHeight="50" Command="{Binding NextImageCommand}" Grid.ColumnSpan="2">Next</Button>
+            <Button Grid.Column="0"
+                    Margin="12,10,0,10"
+                    MaxWidth="100"
+                    HorizontalAlignment="Left" Grid.ColumnSpan="2" Width="76"
+                    MaxHeight="50" Command="{Binding PreviousImageCommand}">Previous</Button>
+            <Button Grid.Column="2"
+                    Margin="116,10,0,10"
                     MaxWidth="100"
                     HorizontalAlignment="Left" Width="75"
-                    MaxHeight="50">Next</Button>
-            <Button Grid.Column="0"
-                    Margin="50,10,0,10"
-                    MaxWidth="100"
-                    HorizontalAlignment="Left" Grid.ColumnSpan="2" Width="75"
-                    MaxHeight="50">Previous</Button>
+                    MaxHeight="50" Command="{Binding PreviousImageCommand}">Submit</Button>
         </Grid>
     </Grid>
 </Window>
