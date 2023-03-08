@@ -19,7 +19,7 @@
                 Username:
             </TextBlock>
             <TextBox Margin="10, 0, 0, 10" HorizontalAlignment="Left"
-                     MinWidth="150">
+                     MinWidth="150" Text="{Binding Username}">
             </TextBox>
             <TextBlock Margin="10, 0, 0, 5">
                 Pick your avatar image:
@@ -51,7 +51,7 @@
                     Margin="116,10,0,10"
                     MaxWidth="100"
                     HorizontalAlignment="Left" Width="75"
-                    MaxHeight="50" Command="{Binding PreviousImageCommand}">Submit</Button>
+                    MaxHeight="50" Command="{Binding SubmitUserCommand}">Submit</Button>
         </Grid>
     </Grid>
 </Window>

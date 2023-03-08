@@ -17,7 +17,7 @@ namespace MemoryTiles
         protected override void OnStartup(StartupEventArgs e)
         {
             SetEnvironmentVariables();
-            CreateUserView signInView = new CreateUserView();
+            SignInView signInView = new SignInView();
             signInView.Show();
         }
         public void SetEnvironmentVariables()

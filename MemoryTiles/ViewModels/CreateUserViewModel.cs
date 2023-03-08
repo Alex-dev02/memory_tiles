@@ -63,7 +63,9 @@ namespace MemoryTiles.ViewModels
         }
         private void SubmitUser()
         {
-            UserCacheService.CacheUser(new Models.User(_username, ImageURI, 0, 0));
+            UserCacheService.CacheUser(
+                new Models.User(_username, AssetsCacheService.GetRelativePathForImageFromAbsolute(ImageURI), 0, 0)
+            );
         }
     }
 }

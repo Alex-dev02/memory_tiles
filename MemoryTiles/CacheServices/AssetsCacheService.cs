@@ -13,5 +13,10 @@ namespace MemoryTiles.CacheServices
         {
             return Directory.GetFiles(Environment.GetEnvironmentVariable("sourcePath") + @"\Assets").ToList();
         }
+        public static string GetRelativePathForImageFromAbsolute(string absolutePath)
+        {
+            string relativePath = absolutePath.Split('\\')[absolutePath.Split('\\').Length - 1];
+            return @"..\..\Assets\" + relativePath; 
+        }
     }
 }
