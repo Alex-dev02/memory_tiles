@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace MemoryTiles.ViewModels
 {
-    public class CreateUserViewModel : CommunityToolkit.Mvvm.ComponentModel.ObservableObject
+    public class CreateUserViewModel : ObservableObject
     {
         private string _username;
         private int _imageURIListIndex = 0;

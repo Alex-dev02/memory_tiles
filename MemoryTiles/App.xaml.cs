@@ -1,4 +1,5 @@
-﻿using MemoryTiles.Views;
+﻿using MemoryTiles.CacheServices;
+using MemoryTiles.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,8 +18,9 @@ namespace MemoryTiles
         protected override void OnStartup(StartupEventArgs e)
         {
             SetEnvironmentVariables();
-            SignInView signInView = new SignInView();
-            signInView.Show();
+            SignInView view = new SignInView();
+            view.Show();
+            SignInView cs = new SignInView();
         }
         public void SetEnvironmentVariables()
         {

@@ -23,5 +23,22 @@ namespace MemoryTiles.Views
         {
             InitializeComponent();
         }
+
+        private void CloseApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void MainMenuView(object sender, RoutedEventArgs e)
+        {
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.Show();
+            Close();
+        }
+        private void CreateUserView(object sender, RoutedEventArgs e)
+        {
+            CreateUserView createUserView = new CreateUserView();
+            createUserView.Show();
+            Close();
+        }
     }
 }

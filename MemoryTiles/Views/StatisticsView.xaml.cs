@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,24 +15,13 @@ using System.Windows.Shapes;
 namespace MemoryTiles.Views
 {
     /// <summary>
-    /// Interaction logic for CreateUser.xaml
+    /// Interaction logic for StatisticsView.xaml
     /// </summary>
-    public partial class CreateUserView : Window
+    public partial class StatisticsView : Window
     {
-        public CreateUserView()
+        public StatisticsView()
         {
             InitializeComponent();
-        }
-
-        private void GoToSignInView(object sender, RoutedEventArgs e)
-        {
-            SignInView sv = new SignInView();
-            sv.Show();
-            Close();
-        }
-        private void UserSavedGreeting(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("User saved!");
         }
     }
 }

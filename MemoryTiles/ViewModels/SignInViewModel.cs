@@ -1,10 +1,7 @@
-﻿using MemoryTiles.CacheServices;
-using MemoryTiles.Core;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MemoryTiles.CacheServices;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemoryTiles.ViewModels
 {
@@ -12,6 +9,7 @@ namespace MemoryTiles.ViewModels
     {
         private string _selectedUser;
         private string _selectedUserImageUri;
+
         public List<string> Usernames
         {
             get
@@ -27,8 +25,7 @@ namespace MemoryTiles.ViewModels
             }
             set
             {
-                _selectedUserImageUri = value;
-                OnPropertyChanged();
+                SetProperty(ref _selectedUserImageUri, value);
             }
         }
         public string SelectedUsername
@@ -39,8 +36,9 @@ namespace MemoryTiles.ViewModels
             }
             set
             {
-                _selectedUser = value;
+                SetProperty(ref _selectedUser, value);
                 ImageURI = Environment.CurrentDirectory + @"\" + UserCacheService.GetAvatarImageURI(value);
+                ContextService.CacheUsername(value);
             }
         }
     }

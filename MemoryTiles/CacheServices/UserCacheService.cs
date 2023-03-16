@@ -32,7 +32,8 @@ namespace MemoryTiles.CacheServices
             List<string> pathsToUserProfiles
                 = new List<string>(Directory.GetDirectories(Environment.GetEnvironmentVariable("cachePath")));
             // Selecting only the username
-            return pathsToUserProfiles.Select(x => x.Split('\\')[x.Split('\\').Length - 1]).ToList();
+            return pathsToUserProfiles.Select(x => x.Split('\\')[x.Split('\\').Length - 1])
+                .Where(x => x != "Context").ToList();
         }
         public static string GetAvatarImageURI(string username)
         {
